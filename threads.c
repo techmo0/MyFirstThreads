@@ -10,14 +10,14 @@ void* thr(){
   sleep(3);
   printf("%s\n","ENDinG THREAAADS((" );
   for(int i = 0; i < 1000000 ; i++) {
-    //pthread_mutex_lock(&mutex);
+    pthread_mutex_lock(&mutex);
     a++;
-    //pthread_mutex_unlock(&mutex);
+    pthread_mutex_unlock(&mutex);
   }
 }
 
 int main(){
-  
+
   pthread_t t1, t2, t3, t4;
   pthread_mutex_init(&mutex, NULL);
 
